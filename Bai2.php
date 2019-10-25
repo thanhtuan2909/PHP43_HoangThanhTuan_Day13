@@ -16,7 +16,10 @@ if (isset($_POST['submit'])) {
         $error = 'Username không được để trống';
     } elseif (empty($password)) {
         $error = 'Password không được để trống';
-    } elseif (empty($displayName)) {
+    } elseif ($userType == 0) {
+        $error = 'User Type không được để trống';
+    }
+    elseif (empty($displayName)) {
         $error = 'Display Name không được để trống';
     } elseif (empty($address)) {
         $error = 'Address không được để trống';
@@ -136,6 +139,7 @@ if (isset($_POST['submit'])) {
                 <td class="fright">User Type</td>
                 <td>
                     <select name="userType" id="">
+                        <option value="0">---Selected---</option>
                         <option value="1">Diamond</option>
                         <option value="2">Platinum</option>
                         <option value="3">Gold</option>
