@@ -78,7 +78,8 @@ if (isset($_POST['submit'])) {
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Bài 2</title>
-    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="js/jquery-3.4.1.min.js">
     <style type="text/css">
         body {
             background: #686868;
@@ -210,5 +211,7 @@ if (isset($_POST['submit'])) {
         </table>
     </form>
 </div>
+
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
 </body>
 </html>

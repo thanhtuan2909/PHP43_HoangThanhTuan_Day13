@@ -41,8 +41,8 @@ if (isset($_POST['save'])){
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Bài 5</title>
-    <link rel="stylesheet" href="bootstrap.min.css">
-    <link rel="stylesheet" href="jquery-3.4.1.min.js">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="js/jquery-3.4.1.min.js">
     <style type="text/css">
         .form-register {
             margin: 0 auto;
@@ -154,6 +154,6 @@ if (isset($_POST['save'])){
     </div>
 </div>
 
-<script type="text/javascript" src="bootstrap.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
 </body>
 </html>

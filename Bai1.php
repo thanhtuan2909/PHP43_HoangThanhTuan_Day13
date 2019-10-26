@@ -102,6 +102,6 @@ if (isset($_POST['submit'])) {
         </tr>
     </table>
 </form>
-<h3 style="color: green">
+<h3 style="color: #000">
     <?php echo $result; ?>
 </h3>
