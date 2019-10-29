@@ -118,22 +118,36 @@ if (isset($_POST['submit'])) {
                 </td>
             </tr>
             <tr>
+                <?php
+                $selectedF = 'selected';
+                $selectedS = '';
+                if (isset($_POST['academicLevel'])) {
+                    switch ($_POST['academicLevel']) {
+                        case 1:
+                            $selectedF = 'selected';
+                            break;
+                        case 2:
+                            $selectedS = 'selected';
+                            break;
+                    }
+                }
+                ?>
                 <td class="fr">Select academic level</td>
                 <td>
                     <select name="academicLevel" id="">
-                        <option value="1">Freshman</option>
-                        <option value="2">Sophomore</option>
+                        <option value="1" <?php echo $selectedF ?>>Freshman</option>
+                        <option value="2" <?php echo $selectedS ?>>Sophomore</option>
                     </select>
                 </td>
             </tr>
             <tr>
                 <td class="fr">Identify courses taken:</td>
                 <td>
-                    <input type="checkbox" name="courses[]" value="1" id=""> CSCI 1710 <br>
-                    <input type="checkbox" name="courses[]" value="2" id=""> CSCI 1800 <br>
-                    <input type="checkbox" name="courses[]" value="3" id=""> CSCI 2800 <br>
-                    <input type="checkbox" name="courses[]" value="4" id=""> CSCI 2150 <br>
-                    <input type="checkbox" name="courses[]" value="5" id=""> CSCI 2910 <br>
+                    <input type="checkbox" name="courses[]" <?php echo isset($_POST['courses']) ? 'checked' : ''; ?> value="1" id=""> CSCI 1710 <br>
+                    <input type="checkbox" name="courses[]" <?php echo isset($_POST['courses']) ? 'checked' : ''; ?> value="2" id=""> CSCI 1800 <br>
+                    <input type="checkbox" name="courses[]" <?php echo isset($_POST['courses']) ? 'checked' : ''; ?> value="3" id=""> CSCI 2800 <br>
+                    <input type="checkbox" name="courses[]" <?php echo isset($_POST['courses']) ? 'checked' : ''; ?> value="4" id=""> CSCI 2150 <br>
+                    <input type="checkbox" name="courses[]" <?php echo isset($_POST['courses']) ? 'checked' : ''; ?> value="5" id=""> CSCI 2910 <br>
                 </td>
             </tr>
             <tr>

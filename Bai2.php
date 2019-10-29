@@ -18,8 +18,7 @@ if (isset($_POST['submit'])) {
         $error = 'Password không được để trống';
     } elseif ($userType == 0) {
         $error = 'User Type không được để trống';
-    }
-    elseif (empty($displayName)) {
+    } elseif (empty($displayName)) {
         $error = 'Display Name không được để trống';
     } elseif (empty($address)) {
         $error = 'Address không được để trống';
@@ -84,6 +83,7 @@ if (isset($_POST['submit'])) {
         body {
             background: #686868;
         }
+
         .fright {
             text-align: right;
         }
@@ -137,14 +137,41 @@ if (isset($_POST['submit'])) {
                 </td>
             </tr>
             <tr>
+                <?php
+                $selectedN = 'selected';
+                $selectedD = '';
+                $selectedP = '';
+                $selectedG = '';
+                $selectedS = '';
+
+                if (isset($_POST['userType'])) {
+                    switch ($_POST['userType']) {
+                        case 0:
+                            $selectedN = 'selected';
+                            break;
+                        case 1:
+                            $selectedD = 'selected';
+                            break;
+                        case 2:
+                            $selectedP = 'selected';
+                            break;
+                        case 3:
+                            $selectedG = 'selected';
+                            break;
+                        case 4:
+                            $selectedS = 'selected';
+                            break;
+                    }
+                }
+                ?>
                 <td class="fright">User Type</td>
                 <td>
                     <select name="userType" id="">
-                        <option value="0">---Selected---</option>
-                        <option value="1">Diamond</option>
-                        <option value="2">Platinum</option>
-                        <option value="3">Gold</option>
-                        <option value="4">Sliver</option>
+                        <option value="0" <?php echo $selectedN ?>>---Selected---</option>
+                        <option value="1" <?php echo $selectedD ?>>Diamond</option>
+                        <option value="2" <?php echo $selectedP ?>>Platinum</option>
+                        <option value="3" <?php echo $selectedG ?>>Gold</option>
+                        <option value="4" <?php echo $selectedS ?>>Sliver</option>
                     </select>
                 </td>
             </tr>
@@ -192,7 +219,7 @@ if (isset($_POST['submit'])) {
             <tr>
                 <td></td>
                 <td>
-                    <input type="checkbox" name="agree[]" value="1" id=""> I accept Terms and Conditions
+                    <input type="checkbox" name="agree[]" <?php echo isset($_POST['agree']) ? 'checked' : '';  ?> value="1" id=""> I accept Terms and Conditions
                 </td>
             </tr>
             <tr class="bg-hf">

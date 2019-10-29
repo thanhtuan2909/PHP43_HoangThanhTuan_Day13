@@ -163,13 +163,40 @@ if (isset($_POST['save'])) {
                         <input type="radio" name="gender" value="2" <?php echo $checkedFemale ?> id=""> Female
                     </div>
                     <div class="form-group">
+                        <?php
+                        $selected1 = 'selected';
+                        $selected2 = '';
+                        $selected3 = '';
+                        $selected4 = '';
+                        $selected5 = '';
+
+                        if (isset($_POST['state'])) {
+                            switch ($_POST['state']) {
+                                case 1:
+                                    $selected1 = 'selected';
+                                    break;
+                                case 2:
+                                    $selected2 = 'selected';
+                                    break;
+                                case 3:
+                                    $selected3 = 'selected';
+                                    break;
+                                case 4:
+                                    $selected4 = 'selected';
+                                    break;
+                                case 5:
+                                    $selected5 = 'selected';
+                                    break;
+                            }
+                        }
+                        ?>
                         State
                         <select name="state" class="form-control" id="">
-                            <option value="1">Johor</option>
-                            <option value="2">Las Vegas</option>
-                            <option value="3">New York</option>
-                            <option value="4">New Mexico</option>
-                            <option value="5">Toronto</option>
+                            <option value="1" <?php echo $selected1; ?>>Johor</option>
+                            <option value="2" <?php echo $selected2; ?>>Las Vegas</option>
+                            <option value="3" <?php echo $selected3; ?>>New York</option>
+                            <option value="4" <?php echo $selected4; ?>>New Mexico</option>
+                            <option value="5" <?php echo $selected5; ?>>Toronto</option>
                         </select>
                     </div>
                     <div class="form-group">
